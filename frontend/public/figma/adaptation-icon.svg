@@ -1,0 +1,36 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    EU Adaptation — single consolidated "pencil-in-circle" pictogram.
+    Replaces the previous 6-piece composition (Vector2 circle + 4×
+    Vector2-dot-5 stars + Vector7 pencil) where the four dot accents
+    rendered at 5×5 with a 2px stroke (effectively a blob).
+
+    Layout:
+      • Outer circle      52 × 52 (cx=28, cy=28, r=26)
+      • Pencil            crossed diagonally (NE→SW)
+      • Pencil tip        small triangle at lower-left
+      • Eraser            ferrule + cap at upper-right
+  -->
+
+  <!-- Outer circle -->
+  <circle cx="28" cy="28" r="26" stroke="#F5B800" stroke-width="2"/>
+
+  <!-- Pencil body: rectangle rotated 45deg around centre.
+       Drawn natively as a diamond/rotated rectangle path. -->
+  <path d="M37 13
+           L 43 19
+           L 21 41
+           L 15 41
+           L 15 35
+           L 37 13 Z"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Ferrule band near eraser (perpendicular to shaft) -->
+  <path d="M33 17 L 39 23"
+        stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Pencil tip line -->
+  <path d="M15 35 L 21 41"
+        stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+</svg>

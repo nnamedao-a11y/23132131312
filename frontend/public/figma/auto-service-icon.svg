@@ -1,0 +1,60 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Auto Service — single consolidated icon. Replaces the previous
+    `gemini-svg-1-1.svg` composite (a 100×100 gear cluster) which
+    rendered as a fuzzy "crosshair" blob inside the card.
+
+    Design: crossed spanner (wrench) + flat-head screwdriver — the
+    universal "service / repair" pictogram. Everything drawn natively
+    with stroke-width 2, stroke-linecap=round, stroke-linejoin=round.
+  -->
+
+  <!--
+    Spanner / wrench — goes from upper-right to lower-left.
+    Open jaw at the upper-right end.
+    Head ring + jaw drawn as a U opening to the upper-right; handle
+    is a thick 2-track shape rendered as one outline path.
+  -->
+  <path d="M51 7
+           A 9 9 0 1 0 63 19
+           L 63 19
+           L 56 19
+           L 52 23
+           L 16 59
+           A 4 4 0 0 1 11 59
+           L 11 59
+           A 4 4 0 0 1 11 54
+           L 47 18
+           L 51 14
+           L 51 7 Z"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!--
+    Screwdriver — crossed from upper-left to lower-right.
+    Shaft (thin rectangle) ending in a flat head tip + grip handle
+    at the upper-left.
+  -->
+  <!-- Handle (rounded rect) at upper-left -->
+  <path d="M10 7
+           L 18 7
+           A 2 2 0 0 1 20 9
+           L 20 17
+           A 2 2 0 0 1 18 19
+           L 10 19
+           A 2 2 0 0 1 8 17
+           L 8 9
+           A 2 2 0 0 1 10 7 Z"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Grip notch lines -->
+  <path d="M11 11H17" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M11 15H17" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <!-- Shaft going to lower-right; rectangle 4-wide -->
+  <path d="M18 19L52 53" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M14 23L48 57" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <!-- Flat tip — short segment perpendicular to the shaft at the end -->
+  <path d="M48 57L52 53" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M50 59L55 54" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M50 59L55 54" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+</svg>

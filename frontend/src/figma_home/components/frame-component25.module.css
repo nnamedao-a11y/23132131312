@@ -1210,7 +1210,7 @@
   text-align: left;
   font-size: 24px;
   line-height: 100%;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   margin: 0;
   color: var(--color-white);
@@ -1441,5 +1441,133 @@
   .cardEntered .geminiSvg1Icon,
   .cardEntered .geminiSvg11 {
     transform: none;
+  }
+}
+
+/* ============================================================================
+   UNIFIED SERVICE CARD LAYOUT  ·  2026-05-16 session
+   ────────────────────────────────────────────────────────────────────────────
+   Per design spec, every one of the 8 "Our Services" cards must share an
+   IDENTICAL internal geometry:
+
+       •  Card body            459.825 × 459.825 (square)
+                                — currently we use the existing row layout
+                                  which sizes them via `flex:1` → ~426 wide
+                                  on a 1920 desktop. We pin the HEIGHT to
+                                  ~ 360 px (matches the rest of the visual
+                                  system) and let the width flex with the
+                                  grid so the marketing layout above /
+                                  below the section stays untouched.
+
+       •  Background plate     full-bleed inside the card, gray #1d1d1b,
+                                4 px radius                                  ↳ rendered via `.serviceCardBg` (absolute inset:0)
+
+       •  Icon                 absolute   top: 30 px   left: 30 px
+       •  Title (H Medium 24)  absolute   top: 126.51 px   left: 30 px
+       •  Description (H 14)   absolute   top: 215 px      left: 30 px
+                                (uniform left margin across all 8 cards)
+
+   The legacy card-specific classes (.rectangleParent, .rectangleGroup,
+   .rectangleContainer, .frameSection, .frameWrapper3, .rectangleParent3,
+   .rectangleParent4, .rectangleParent5) are still attached so the
+   `.parallaxCard` JS lookup keeps working — but every layout-affecting
+   property is reset by the `.serviceCard` rule below.
+============================================================================ */
+
+.serviceCard {
+  /* Wipe legacy flex/padding from the old per-card rules. */
+  position: relative !important;
+  flex: 1 1 0 !important;
+  align-self: stretch;
+  min-width: var(--min-w-280, 280px);
+  height: 360px !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  display: block !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* Gray rounded background plate (full-bleed inside each card). */
+.serviceCardBg {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background-color: var(--color-gray-300);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Icon — pinned to (top:30, left:30) in every card. */
+.serviceCardIcon {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+  /* Crisp SVG strokes on retina */
+  shape-rendering: geometricPrecision;
+}
+
+/* Title — H Medium 24, pinned to (top:126.51, left:30, right:30). */
+.serviceCardTitle {
+  position: absolute !important;
+  top: 126.51px !important;
+  left: 30px !important;
+  right: 30px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+
+  font-family: var(--font-mazzard, 'Mazzard H', 'Mazzard', system-ui, sans-serif) !important;
+  font-size: 24px !important;
+  line-height: 100% !important;
+  font-weight: 500 !important;  /* H Medium */
+  text-transform: uppercase;
+  letter-spacing: 0;
+  color: var(--color-white);
+  z-index: 2;
+}
+
+/* Description — H Medium 14, pinned to (top:215, left:30, right:30). */
+.serviceCardDesc {
+  position: absolute !important;
+  top: 215px !important;
+  left: 30px !important;
+  right: 30px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+
+  font-family: var(--font-mazzard, 'Mazzard H', 'Mazzard', system-ui, sans-serif) !important;
+  font-size: 14px !important;
+  line-height: 140% !important;
+  font-weight: 500 !important;  /* H Medium */
+  letter-spacing: 0;
+  color: var(--color-white);
+  z-index: 2;
+}
+
+/* Override leftover Auto-Service-specific h3 rule which was forcing 700. */
+.rectangleParent3 .serviceCardTitle {
+  font-weight: 500 !important;
+}
+
+/* ── Mobile / tablet: relax the absolute geometry, let cards stack ─────── */
+@media (max-width: 925px) {
+  .serviceCard {
+    height: auto !important;
+    min-height: 320px;
+  }
+  .serviceCardDesc {
+    /* Pin to icon-relative bottom so wrapped text never collides. */
+    top: 200px !important;
   }
 }

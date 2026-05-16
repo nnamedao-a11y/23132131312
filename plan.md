@@ -1,6 +1,88 @@
 # BIBI Cars — Session Plan
 
 
+## 2026-05-16 session (part 4) — Bottom-row icons + uniform card geometry
+
+### Bugs fixed
+1. **4 bottom icons (`Parts Sourcing`, `Auto Service`, `Detailing &
+   Cleaning`, `Home Delivery`)** — same fragmentation problem we had on
+   the top row. Notable example: the Home Delivery car wheels were
+   `Vector2.svg` (54×54 source w/ 2px stroke) scaled to 7.8×7.8, giving
+   an effective stroke of ~0.29 px (hair-line). Replaced all four (+
+   the EU-Adaptation pencil-in-circle which still had the same issue)
+   with single consolidated inline SVGs at native size, stroke-width 2.
+
+2. **Auto Service title rendered in bold (font-weight 700)** —
+   stale per-card override at
+   `.rectangleParent3 .serviceTitle h3 { font-weight: 700 }` in
+   `frame-component25.module.css`. Changed to 500 (H Medium).
+
+3. **Non-uniform internal geometry across the 8 cards** — every card
+   had its own padding / flex / gap stack (`.rectangleParent`,
+   `.rectangleGroup`, `.rectangleContainer`, `.frameSection`,
+   `.frameWrapper3`, `.rectangleParent3`, `.rectangleParent4`,
+   `.rectangleParent5`). Refactored ALL 8 sections to share an
+   identical absolute layout via new utility classes:
+
+   ```
+   .serviceCard       position: relative;  height: 360px
+   .serviceCardBg     absolute  inset:0    gray plate, rx=4
+   .serviceCardIcon   absolute  top:30      left:30
+   .serviceCardTitle  absolute  top:126.51 left:30 right:30  H Medium 24
+   .serviceCardDesc   absolute  top:215    left:30 right:30  H Medium 14
+   ```
+
+   The legacy card-specific class names are kept on the `<section>`
+   tag so the `.parallaxCard` JS lookup (`row1.querySelectorAll(":scope
+   > section")`) and the existing 3D tilt animation keep working.
+
+### New assets (`/app/frontend/public/figma/`)
+- `adaptation-icon.svg`        56 × 56  — pencil in circle (EU adaptation)
+- `parts-sourcing-icon.svg`    66 × 60  — sun + package box
+- `auto-service-icon.svg`      70 × 70  — crossed wrench + screwdriver
+- `detailing-icon.svg`         70 × 70  — spray bottle + droplets
+- `home-delivery-icon.svg`     80 × 72  — house + car with proper 2px wheels
+
+### JSX (`figma_home/components/frame-component25.jsx`)
+- Replaced the entire 8-card block (lines 192-516) with a flat uniform
+  structure — 4 elements per card: `serviceCardBg`, `serviceCardIcon`,
+  `serviceCardTitle`, `serviceCardDesc`.
+- Removed all the orphan wrapper divs (`.frameGroup`, `.frameContainer`,
+  `.importWrapper`, `.eUAdaptation`, `.adaptationToEuropeanStandarParent`,
+  `.frameDiv`, `.weHelpYouFindTheRightCarWrapper`, `.frameParent2-9`,
+  `.vectorParent*-8`, `.partsDetail`, `.frameWrapper2`, `.geminiSvg11`,
+  `.geminiSvg1Icon`, etc.) that existed only to support the legacy
+  fragment composition.
+
+### Verification (live)
+Measured on the running preview at 1920×1080:
+
+| # | Title | tw  | ts   | iconTop | iconLeft | titleTop | titleLeft | descTop | descLeft | h   |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | Import           | 500 | 24px | 30 | 30 | 126.5 | 30 | 215 | 30 | 360 |
+| 1 | Adaptation…      | 500 | 24px | 30 | 30 | 126.5 | 30 | 215 | 30 | 360 |
+| 2 | Registration…    | 500 | 24px | 30 | 30 | 126.5 | 30 | 215 | 30 | 360 |
+| 3 | Financing        | 500 | 24px | 30 | 30 | 126.5 | 30 | 215 | 30 | 360 |
+| 4 | Parts Sourcing…  | 500 | 24px | 30 | 30 | 126.5 | 30 | 215 | 30 | 360 |
+| 5 | Auto Service     | 500 | 24px | 30 | 30 | 126.5 | 30 | 215 | 30 | 360 |
+| 6 | Detailing…       | 500 | 24px | 30 | 30 | 126.5 | 30 | 215 | 30 | 360 |
+| 7 | Home Delivery    | 500 | 24px | 30 | 30 | 126.5 | 30 | 215 | 30 | 360 |
+
+All 8 cards measure exactly: icon @ (30, 30), title @ (30, 126.5)
+H Medium 24, desc @ (30, 215) H Medium 14, height 360. Matches the
+provided design spec verbatim.
+
+### Files touched
+- `frontend/public/figma/adaptation-icon.svg` (new)
+- `frontend/public/figma/parts-sourcing-icon.svg` (new)
+- `frontend/public/figma/auto-service-icon.svg` (new)
+- `frontend/public/figma/detailing-icon.svg` (new)
+- `frontend/public/figma/home-delivery-icon.svg` (new)
+- `frontend/src/figma_home/components/frame-component25.jsx`
+- `frontend/src/figma_home/components/frame-component25.module.css`
+
+
+
 ## 2026-05-16 session (part 3) — Our Services icons cleanup (Registration & Certification + Financing)
 
 ### Done

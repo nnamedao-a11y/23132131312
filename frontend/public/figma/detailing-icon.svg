@@ -1,0 +1,50 @@
+<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Detailing & Cleaning — spray bottle pictogram. Replaces
+    `gemini-svg-1.svg` (car silhouette which read more as "vehicle"
+    than "cleaning"). Drawn natively with stroke-width 2.
+
+    Layout:
+      • Nozzle  rectangle top-left  10×6
+      • Trigger angled L            below the nozzle
+      • Bottle body rounded         32×34 — main shape
+      • Liquid level horizontal line inside the bottle
+      • 3 spray dots emerging from the nozzle tip
+  -->
+
+  <!-- Spray nozzle (small rectangle, upper-left) -->
+  <rect x="10" y="10" width="12" height="7" rx="1"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Trigger linking nozzle to bottle -->
+  <path d="M22 17 L 28 17 L 28 25"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Bottle body — rounded 32×34 starting just below the trigger -->
+  <path d="M24 25
+           L 56 25
+           A 3 3 0 0 1 59 28
+           L 59 56
+           A 3 3 0 0 1 56 59
+           L 24 59
+           A 3 3 0 0 1 21 56
+           L 21 28
+           A 3 3 0 0 1 24 25 Z"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Liquid level line inside bottle -->
+  <path d="M25 36 H 55"
+        stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Label area divider -->
+  <path d="M25 50 H 55"
+        stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Spray dots (3 small dashes emerging from nozzle tip) -->
+  <path d="M3 11 L 6 11" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M3 14 L 5 14" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+  <path d="M5 8 L 7 8" stroke="#F5B800" stroke-width="2" stroke-linecap="round"/>
+</svg>
