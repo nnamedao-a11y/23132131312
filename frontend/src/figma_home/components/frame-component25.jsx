@@ -344,11 +344,11 @@ const FrameComponent25 = ({
                   inside, all strokes native 2 px). */}
               <section className={`${styles.rectangleParent3} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <div className={styles.serviceCardIcon} style={{ width: 58, height: 58 }}>
+                <div className={styles.serviceCardIcon} style={{ width: 60, height: 60 }}>
                   <img
                     className={styles.autoServiceIcon}
-                    width={58}
-                    height={58}
+                    width={60}
+                    height={60}
                     sizes="100vw"
                     alt=""
                     src="/figma/auto-service-icon.svg"

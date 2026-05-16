@@ -162,11 +162,13 @@
 
 /* Single combined Auto Service icon — outer shell 58 × 58 (the original
    shield/notched path) + GPS-fix crosshair 20 × 20 centred inside.
-   All strokes native 2 px, colour #F5B800. */
+   ViewBox is 60×60 with a 1 px margin so the rounded notch corners
+   (which extend ~0.5 px past the 58×58 path bbox after stroke=2) are
+   NOT clipped. All strokes native 2 px, colour #F5B800. */
 .autoServiceIcon {
   display: block;
-  width: 58px;
-  height: 58px;
+  width: 60px;
+  height: 60px;
   flex-shrink: 0;
 }
 .vectorParent {
