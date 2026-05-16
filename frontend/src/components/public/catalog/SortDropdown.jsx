@@ -1,0 +1,117 @@
+/**
+ * SortDropdown — Figma 1:1 "SORT ±" menu.
+ *
+ * States:
+ *   collapsed → "SORT +" (yellow underlined)  →  click → expands
+ *   expanded  → "SORT −" (yellow underlined)  +  menu panel below
+ *
+ * Geometry (per Figma annotation):
+ *   • menu starts 8 px below SORT button
+ *   • inner padding 12 px (top/bottom/left/right)
+ *   • row vertical padding: 12 px above & below text
+ *   • horizontal separator (#3A3A3A, 1px) between logical groups
+ *   • checkmark icon (yellow) 12×12, 8 px gap to text label
+ *   • selected text  : #D6D6D6 (light)
+ *   • unselected text: #949494 (grey)
+ *   • font           : Mazzard H, 14px, weight 400, capitalize
+ *
+ * Sort keys (matches backend /api/public/vehicles?sort=...):
+ *   popular | newest | oldest | most_expensive | cheapest |
+ *   greatest_mileage | lowest_mileage
+ */
+import React, { useEffect, useRef, useState } from 'react';
+import styles from './SortDropdown.module.css';
+
+export const SORT_OPTIONS = [
+  { group: 0, key: 'popular',          label: 'Popular' },
+  { group: 1, key: 'newest',           label: 'Newest' },
+  { group: 1, key: 'oldest',           label: 'Oldest' },
+  { group: 2, key: 'most_expensive',   label: 'Most expensive' },
+  { group: 2, key: 'cheapest',         label: 'Cheapest' },
+  { group: 3, key: 'greatest_mileage', label: 'Greatest mileage' },
+  { group: 3, key: 'lowest_mileage',   label: 'Lowest mileage' },
+];
+
+export const SortDropdown = ({ value = 'popular', onChange }) => {
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef(null);
+
+  // Close on outside click / Escape
+  useEffect(() => {
+    if (!open) return undefined;
+    const onDocClick = (e) => {
+      if (rootRef.current && !rootRef.current.contains(e.target)) setOpen(false);
+    };
+    const onKey = (e) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('mousedown', onDocClick);
+    document.addEventListener('keydown',   onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDocClick);
+      document.removeEventListener('keydown',   onKey);
+    };
+  }, [open]);
+
+  const select = (k) => {
+    onChange?.(k);
+    setOpen(false);
+  };
+
+  return (
+    <div className={styles.root} ref={rootRef}>
+      <button
+        type="button"
+        className={styles.toggle}
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-haspopup="listbox"
+        data-testid="catalog-sort"
+      >
+        SORT&nbsp;{open ? '−' : '+'}
+      </button>
+
+      {open && (
+        <ul
+          className={styles.menu}
+          role="listbox"
+          aria-label="Sort order"
+          data-testid="catalog-sort-menu"
+        >
+          {SORT_OPTIONS.map((opt, idx) => {
+            const isSelected = opt.key === value;
+            const prev = SORT_OPTIONS[idx - 1];
+            const showDivider = prev && prev.group !== opt.group;
+            return (
+              <React.Fragment key={opt.key}>
+                {showDivider && <li className={styles.divider} aria-hidden="true" />}
+                <li
+                  className={`${styles.item} ${isSelected ? styles.itemSelected : ''}`}
+                  role="option"
+                  aria-selected={isSelected}
+                  onClick={() => select(opt.key)}
+                  data-testid={`sort-option-${opt.key}`}
+                >
+                  <span className={styles.check} aria-hidden="true">
+                    {isSelected && (
+                      <svg viewBox="0 0 12 12" width="12" height="12" fill="none">
+                        <path
+                          d="M2 6.5L4.8 9 10 3.2"
+                          stroke="currentColor"
+                          strokeWidth="1.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    )}
+                  </span>
+                  <span className={styles.label}>{opt.label}</span>
+                </li>
+              </React.Fragment>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export default SortDropdown;
