@@ -148,6 +148,17 @@
   height: 46px;
   flex-shrink: 0;
 }
+
+/* Single combined Home Delivery icon — replaces the previous 7-piece
+   composition. Rendered natively at 60×62 with stroke-width 2, fixing
+   the hair-line wheel circles (previously Vector2 24×24 source scaled
+   to 7.8×7.8, effective stroke ~0.6 px) and the door pillar lines. */
+.homeDeliveryIcon {
+  display: block;
+  width: 60px;
+  height: 62px;
+  flex-shrink: 0;
+}
 .vectorParent {
   height: var(--height-52);
   flex: 1;

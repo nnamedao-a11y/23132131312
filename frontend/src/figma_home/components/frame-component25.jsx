@@ -377,70 +377,21 @@ const FrameComponent25 = ({
                 <div className={styles.serviceCardDesc}>{t.detailingDesc}</div>
               </section>
 
-              {/* Row 2, card 4 — HOME DELIVERY (original fragments) */}
+              {/* Row 2, card 4 — HOME DELIVERY (consolidated single SVG,
+                  same pattern as Parts Sourcing — fixes hair-line wheels
+                  and thin door pillars by drawing everything natively at
+                  stroke-width 2). */}
               <section className={`${styles.rectangleParent5} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <div className={styles.serviceCardIcon} style={{ width: 70, height: 70 }}>
-                  <div className={styles.frameParent11}>
-                    <div className={styles.vectorParent8}>
-                      <img
-                        className={styles.vectorIcon}
-                        width={51.8}
-                        height={46.6}
-                        sizes="100vw"
-                        alt=""
-                        src="/figma/Vector15.svg"
-                      />
-                      <img
-                        className={styles.vectorIcon33}
-                        width={2}
-                        height={15.5}
-                        sizes="100vw"
-                        alt=""
-                        src="/figma/Vector16.svg"
-                      />
-                      <img
-                        className={styles.vectorIcon34}
-                        width={2}
-                        height={15.5}
-                        sizes="100vw"
-                        alt=""
-                        src="/figma/Vector16.svg"
-                      />
-                      <img
-                        className={styles.vectorIcon35}
-                        width={18.1}
-                        height={2}
-                        sizes="100vw"
-                        alt=""
-                        src="/figma/Vector3.svg"
-                      />
-                    </div>
-                    <img
-                      className={styles.vectorIcon36}
-                      width={41.4}
-                      height={20.7}
-                      sizes="100vw"
-                      alt=""
-                      src="/figma/Vector17.svg"
-                    />
-                    <img
-                      className={styles.vectorIcon37}
-                      width={7.8}
-                      height={7.8}
-                      sizes="100vw"
-                      alt=""
-                      src="/figma/Vector2.svg"
-                    />
-                    <img
-                      className={styles.vectorIcon38}
-                      width={7.8}
-                      height={7.8}
-                      sizes="100vw"
-                      alt=""
-                      src="/figma/Vector2.svg"
-                    />
-                  </div>
+                <div className={styles.serviceCardIcon} style={{ width: 60, height: 62 }}>
+                  <img
+                    className={styles.homeDeliveryIcon}
+                    width={60}
+                    height={62}
+                    sizes="100vw"
+                    alt=""
+                    src="/figma/home-delivery-icon.svg"
+                  />
                 </div>
                 <h3 className={styles.serviceCardTitle}>{t.homeDelivery}</h3>
                 <div className={styles.serviceCardDesc}>{t.homeDeliveryDesc}</div>

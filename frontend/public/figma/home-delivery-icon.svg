@@ -1,0 +1,63 @@
+<svg width="60" height="62" viewBox="0 0 60 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Home Delivery — single consolidated icon. Same approach as
+    Parts Sourcing / Import / Financing: one inline SVG, drawn
+    natively at the display size, so every stroke is genuinely 2 px.
+
+    The previous fragment composition shrank the wheel circles
+    (Vector2.svg, 24×24 source) down to 7.8×7.8, giving an effective
+    stroke of ~0.6 px (the "hair-line wheels" bug). The house outline
+    also rendered with sub-pixel stroke artefacts on the door pillars
+    because the 2 px vertical dashes (2×18 source) got scaled to
+    2×15.5 — narrow side correct, long side fine, but the corners
+    inside the door rounded oddly. Both issues are gone now.
+
+    Composition (kept identical to the original Figma intent):
+      • House pentagon          30 × 33 at top-left  — Vector15 path
+      • Door (2 pillars + top)  inside lower half of house body
+      • Car (front view)        ~36 × 18 at bottom-right — Vector17 path
+      • Two wheels              r=4 native circles, stroke 2 — FIXES the
+                                 "thin wheels" bug
+
+    All paths stroke-width 2, stroke-linecap=round, stroke-linejoin=round.
+  -->
+
+  <!-- ───── HOUSE (pentagon) ───── -->
+  <!-- Path derived from Vector15.svg (54×49 source) scaled to ~30×33,
+       so apex (27,1) → (16,1), bottom-right (47.6,47.6) → (28,33). -->
+  <path d="M16 1
+           L 1 16
+           L 4 16
+           L 4 33
+           L 28 33
+           L 28 16
+           L 31 16
+           L 16 1 Z"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Door inside the house: 2 vertical pillars (~2 × 12) + top lintel -->
+  <path d="M11 33 L 11 21 L 21 21 L 21 33"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- ───── CAR (front view) ───── -->
+  <!-- Path derived from Vector17.svg (44×23 source) scaled to 36×18,
+       offset by (22, 32) so it sits at the bottom-right of the icon. -->
+  <path d="M22 41
+           L 26 41
+           L 31 32
+           L 49 32
+           L 54 41
+           L 58 41
+           L 58 52
+           L 22 52 Z"
+        stroke="#F5B800" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ───── WHEELS ─────
+       Two native circles, r=4 with stroke-width=2 (NO scaling), so the
+       wheel outline is properly 2 px and the wheels actually look round. -->
+  <circle cx="30" cy="55" r="4" stroke="#F5B800" stroke-width="2"/>
+  <circle cx="50" cy="55" r="4" stroke="#F5B800" stroke-width="2"/>
+</svg>
