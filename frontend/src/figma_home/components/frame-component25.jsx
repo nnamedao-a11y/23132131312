@@ -378,16 +378,16 @@ const FrameComponent25 = ({
               </section>
 
               {/* Row 2, card 4 — HOME DELIVERY (consolidated single SVG,
-                  same pattern as Parts Sourcing — fixes hair-line wheels
-                  and thin door pillars by drawing everything natively at
-                  stroke-width 2). */}
+                  EXACT Figma geometry: house 51.81×46.63, car 41.4×20.7,
+                  wheels 7.8×7.8 — total icon 74.2×65.7, all strokes
+                  native 2 px). */}
               <section className={`${styles.rectangleParent5} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <div className={styles.serviceCardIcon} style={{ width: 60, height: 62 }}>
+                <div className={styles.serviceCardIcon} style={{ width: 74.2, height: 65.7 }}>
                   <img
                     className={styles.homeDeliveryIcon}
-                    width={60}
-                    height={62}
+                    width={74.2}
+                    height={65.7}
                     sizes="100vw"
                     alt=""
                     src="/figma/home-delivery-icon.svg"

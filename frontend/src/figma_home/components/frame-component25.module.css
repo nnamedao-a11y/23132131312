@@ -149,14 +149,14 @@
   flex-shrink: 0;
 }
 
-/* Single combined Home Delivery icon — replaces the previous 7-piece
-   composition. Rendered natively at 60×62 with stroke-width 2, fixing
-   the hair-line wheel circles (previously Vector2 24×24 source scaled
-   to 7.8×7.8, effective stroke ~0.6 px) and the door pillar lines. */
+/* Single combined Home Delivery icon — EXACT Figma geometry:
+   house 51.81 × 46.63, car 41.4 × 20.7, wheels 7.8 × 7.8, total
+   icon 74.2 × 65.7.  Rendered natively at stroke-width 2 (no scaling
+   artefacts → wheels are now genuine circles with 2 px stroke). */
 .homeDeliveryIcon {
   display: block;
-  width: 60px;
-  height: 62px;
+  width: 74.2px;
+  height: 65.7px;
   flex-shrink: 0;
 }
 .vectorParent {
