@@ -159,6 +159,16 @@
   height: 65.7px;
   flex-shrink: 0;
 }
+
+/* Single combined Auto Service icon — outer shell 58 × 58 (the original
+   shield/notched path) + GPS-fix crosshair 20 × 20 centred inside.
+   All strokes native 2 px, colour #F5B800. */
+.autoServiceIcon {
+  display: block;
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+}
 .vectorParent {
   height: var(--height-52);
   flex: 1;

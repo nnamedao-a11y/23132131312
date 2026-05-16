@@ -339,18 +339,19 @@ const FrameComponent25 = ({
                 <div className={styles.serviceCardDesc}>{t.partsSourcingDesc}</div>
               </section>
 
-              {/* Row 2, card 2 — AUTO SERVICE (original gemini-svg-1-1.svg) */}
+              {/* Row 2, card 2 — AUTO SERVICE (consolidated single SVG:
+                  outer shell 58×58 + GPS-fix crosshair 20×20 centred
+                  inside, all strokes native 2 px). */}
               <section className={`${styles.rectangleParent3} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <div className={styles.serviceCardIcon} style={{ width: 85, height: 85 }}>
+                <div className={styles.serviceCardIcon} style={{ width: 58, height: 58 }}>
                   <img
-                    className={styles.geminiSvg11}
-                    loading="lazy"
-                    width={85}
-                    height={85}
+                    className={styles.autoServiceIcon}
+                    width={58}
+                    height={58}
                     sizes="100vw"
                     alt=""
-                    src="/figma/gemini-svg-1-1.svg"
+                    src="/figma/auto-service-icon.svg"
                   />
                 </div>
                 <h3 className={styles.serviceCardTitle}>{t.autoService}</h3>
