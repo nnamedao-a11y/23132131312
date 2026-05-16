@@ -1500,7 +1500,10 @@
   pointer-events: none;
 }
 
-/* Icon — pinned to (top:30, left:30) in every card. */
+/* Icon — pinned to (top:30, left:30) in every card. Acts as positioning
+   context for legacy fragment wrappers (.eUAdaptation, .frameParent6,
+   .frameParent11, etc.) that live inside, so original fragment top/left
+   offsets are preserved exactly as the original Figma export produced. */
 .serviceCardIcon {
   position: absolute;
   top: 30px;

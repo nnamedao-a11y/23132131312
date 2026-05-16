@@ -202,124 +202,282 @@ const FrameComponent25 = ({
         <div className={styles.servicesCards}>
           <div className={styles.serviceDetailsColumn}>
             <div className={styles.frameParent}>
-              {/* Row 1, card 1 — IMPORT */}
+              {/* Row 1, card 1 — IMPORT (consolidated single SVG) */}
               <section className={`${styles.rectangleParent} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <img
-                  className={styles.serviceCardIcon}
-                  width={70}
-                  height={54}
-                  alt=""
-                  src="/figma/import-icon.svg"
-                />
+                <div className={styles.serviceCardIcon} style={{ width: 70, height: 54 }}>
+                  <img
+                    className={styles.importIcon}
+                    width={70}
+                    height={54}
+                    sizes="100vw"
+                    alt=""
+                    src="/figma/import-icon.svg"
+                  />
+                </div>
                 <h3 className={styles.serviceCardTitle}>{t.import}</h3>
                 <div className={styles.serviceCardDesc}>{t.importDesc}</div>
               </section>
 
-              {/* Row 1, card 2 — EU ADAPTATION */}
+              {/* Row 1, card 2 — EU ADAPTATION (original 6-fragment composition) */}
               <section className={`${styles.rectangleGroup} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <img
-                  className={styles.serviceCardIcon}
-                  width={56}
-                  height={56}
-                  alt=""
-                  src="/figma/adaptation-icon.svg"
-                />
+                <div className={styles.serviceCardIcon} style={{ width: 52, height: 52 }}>
+                  <div className={styles.eUAdaptation}>
+                    <img
+                      className={styles.vectorIcon}
+                      width={52}
+                      height={52}
+                      sizes="100vw"
+                      alt=""
+                      src="/figma/Vector2.svg"
+                    />
+                    <img
+                      className={styles.vectorIcon8}
+                      width={5}
+                      height={5}
+                      sizes="100vw"
+                      alt=""
+                      src="/figma/Vector2-dot-5.svg"
+                    />
+                    <img
+                      className={styles.vectorIcon9}
+                      width={5}
+                      height={5}
+                      sizes="100vw"
+                      alt=""
+                      src="/figma/Vector2-dot-5.svg"
+                    />
+                    <img
+                      className={styles.vectorIcon10}
+                      width={5}
+                      height={5}
+                      sizes="100vw"
+                      alt=""
+                      src="/figma/Vector2-dot-5.svg"
+                    />
+                    <img
+                      className={styles.vectorIcon11}
+                      width={5}
+                      height={5}
+                      sizes="100vw"
+                      alt=""
+                      src="/figma/Vector2-dot-5.svg"
+                    />
+                    <img
+                      className={styles.vectorIcon12}
+                      width={29.6}
+                      height={29.4}
+                      sizes="100vw"
+                      alt=""
+                      src="/figma/Vector7.svg"
+                    />
+                  </div>
+                </div>
                 <h2 className={`${styles.serviceCardTitle} ${styles.serviceCardTitleTwoLine}`}>
                   {t.euAdaptation}
                 </h2>
                 <div className={styles.serviceCardDesc}>{t.euAdaptationDesc}</div>
               </section>
 
-              {/* Row 1, card 3 — REGISTRATION & CERTIFICATION */}
+              {/* Row 1, card 3 — REGISTRATION & CERTIFICATION (consolidated) */}
               <section className={`${styles.rectangleContainer} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <img
-                  className={styles.serviceCardIcon}
-                  width={66}
-                  height={70}
-                  alt=""
-                  src="/figma/registration-icon.svg"
-                />
+                <div className={styles.serviceCardIcon} style={{ width: 66, height: 70 }}>
+                  <img
+                    className={styles.registrationIcon}
+                    width={66}
+                    height={70}
+                    sizes="100vw"
+                    alt=""
+                    src="/figma/registration-icon.svg"
+                  />
+                </div>
                 <h2 className={`${styles.serviceCardTitle} ${styles.serviceCardTitleTwoLine}`}>
                   {t.registration}
                 </h2>
                 <div className={styles.serviceCardDesc}>{t.registrationDesc}</div>
               </section>
 
-              {/* Row 1, card 4 — FINANCING */}
+              {/* Row 1, card 4 — FINANCING (consolidated) */}
               <section className={`${styles.frameSection} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <img
-                  className={styles.serviceCardIcon}
-                  width={68}
-                  height={62}
-                  alt=""
-                  src="/figma/financing-icon.svg"
-                />
+                <div className={styles.serviceCardIcon} style={{ width: 68, height: 62 }}>
+                  <img
+                    className={styles.financingIcon}
+                    width={68}
+                    height={62}
+                    sizes="100vw"
+                    alt=""
+                    src="/figma/financing-icon.svg"
+                  />
+                </div>
                 <h3 className={styles.serviceCardTitle}>{t.financing}</h3>
                 <div className={styles.serviceCardDesc}>{t.financingDesc}</div>
               </section>
             </div>
 
             <div className={styles.frameParent5}>
-              {/* Row 2, card 1 — PARTS SOURCING & DELIVERY */}
+              {/* Row 2, card 1 — PARTS SOURCING & DELIVERY (original fragments) */}
               <section className={`${styles.frameWrapper3} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <img
-                  className={styles.serviceCardIcon}
-                  width={66}
-                  height={60}
-                  alt=""
-                  src="/figma/parts-sourcing-icon.svg"
-                />
+                <div className={styles.serviceCardIcon} style={{ width: 60, height: 50 }}>
+                  <div className={styles.frameParent6}>
+                    <div className={styles.vectorParent6}>
+                      <img
+                        className={styles.vectorIcon27}
+                        width={24}
+                        height={24}
+                        sizes="100vw"
+                        alt=""
+                        src="/figma/Vector2.svg"
+                      />
+                      <img
+                        className={styles.vectorIcon17}
+                        width={36}
+                        height={36}
+                        sizes="100vw"
+                        alt=""
+                        src="/figma/Vector13.svg"
+                      />
+                    </div>
+                    <div className={styles.vectorParent7}>
+                      <img
+                        className={styles.vectorIcon29}
+                        width={24}
+                        height={22}
+                        sizes="100vw"
+                        alt=""
+                        src="/figma/Vector14.svg"
+                      />
+                      <img
+                        className={styles.vectorIcon30}
+                        width={24}
+                        height={2}
+                        sizes="100vw"
+                        alt=""
+                        src="/figma/Vector3.svg"
+                      />
+                      <img
+                        className={styles.vectorIcon31}
+                        width={2}
+                        height={8}
+                        sizes="100vw"
+                        alt=""
+                        src="/figma/Vector12.svg"
+                      />
+                    </div>
+                  </div>
+                </div>
                 <h2 className={`${styles.serviceCardTitle} ${styles.serviceCardTitleTwoLine}`}>
                   {t.partsSourcing}
                 </h2>
                 <div className={styles.serviceCardDesc}>{t.partsSourcingDesc}</div>
               </section>
 
-              {/* Row 2, card 2 — AUTO SERVICE */}
+              {/* Row 2, card 2 — AUTO SERVICE (original gemini-svg-1-1.svg) */}
               <section className={`${styles.rectangleParent3} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <img
-                  className={styles.serviceCardIcon}
-                  width={70}
-                  height={70}
-                  alt=""
-                  src="/figma/auto-service-icon.svg"
-                />
+                <div className={styles.serviceCardIcon} style={{ width: 85, height: 85 }}>
+                  <img
+                    className={styles.geminiSvg11}
+                    loading="lazy"
+                    width={85}
+                    height={85}
+                    sizes="100vw"
+                    alt=""
+                    src="/figma/gemini-svg-1-1.svg"
+                  />
+                </div>
                 <h3 className={styles.serviceCardTitle}>{t.autoService}</h3>
                 <div className={styles.serviceCardDesc}>{t.autoServiceDesc}</div>
               </section>
 
-              {/* Row 2, card 3 — DETAILING & CLEANING */}
+              {/* Row 2, card 3 — DETAILING & CLEANING (original gemini-svg-1.svg) */}
               <section className={`${styles.rectangleParent4} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <img
-                  className={styles.serviceCardIcon}
-                  width={70}
-                  height={70}
-                  alt=""
-                  src="/figma/detailing-icon.svg"
-                />
+                <div className={styles.serviceCardIcon} style={{ width: 85, height: 85 }}>
+                  <img
+                    className={styles.geminiSvg1Icon}
+                    loading="lazy"
+                    width={85}
+                    height={85}
+                    sizes="100vw"
+                    alt=""
+                    src="/figma/gemini-svg-1.svg"
+                  />
+                </div>
                 <h2 className={`${styles.serviceCardTitle} ${styles.serviceCardTitleTwoLine}`}>
                   {t.detailing}
                 </h2>
                 <div className={styles.serviceCardDesc}>{t.detailingDesc}</div>
               </section>
 
-              {/* Row 2, card 4 — HOME DELIVERY */}
+              {/* Row 2, card 4 — HOME DELIVERY (original fragments) */}
               <section className={`${styles.rectangleParent5} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <img
-                  className={styles.serviceCardIcon}
-                  width={80}
-                  height={72}
-                  alt=""
-                  src="/figma/home-delivery-icon.svg"
-                />
+                <div className={styles.serviceCardIcon} style={{ width: 70, height: 70 }}>
+                  <div className={styles.frameParent11}>
+                    <div className={styles.vectorParent8}>
+                      <img
+                        className={styles.vectorIcon}
+                        width={51.8}
+                        height={46.6}
+                        sizes="100vw"
+                        alt=""
+                        src="/figma/Vector15.svg"
+                      />
+                      <img
+                        className={styles.vectorIcon33}
+                        width={2}
+                        height={15.5}
+                        sizes="100vw"
+                        alt=""
+                        src="/figma/Vector16.svg"
+                      />
+                      <img
+                        className={styles.vectorIcon34}
+                        width={2}
+                        height={15.5}
+                        sizes="100vw"
+                        alt=""
+                        src="/figma/Vector16.svg"
+                      />
+                      <img
+                        className={styles.vectorIcon35}
+                        width={18.1}
+                        height={2}
+                        sizes="100vw"
+                        alt=""
+                        src="/figma/Vector3.svg"
+                      />
+                    </div>
+                    <img
+                      className={styles.vectorIcon36}
+                      width={41.4}
+                      height={20.7}
+                      sizes="100vw"
+                      alt=""
+                      src="/figma/Vector17.svg"
+                    />
+                    <img
+                      className={styles.vectorIcon37}
+                      width={7.8}
+                      height={7.8}
+                      sizes="100vw"
+                      alt=""
+                      src="/figma/Vector2.svg"
+                    />
+                    <img
+                      className={styles.vectorIcon38}
+                      width={7.8}
+                      height={7.8}
+                      sizes="100vw"
+                      alt=""
+                      src="/figma/Vector2.svg"
+                    />
+                  </div>
+                </div>
                 <h3 className={styles.serviceCardTitle}>{t.homeDelivery}</h3>
                 <div className={styles.serviceCardDesc}>{t.homeDeliveryDesc}</div>
               </section>
