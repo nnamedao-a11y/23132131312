@@ -133,13 +133,23 @@ const FrameComponent28 = ({ className = "", lang = "en" }) => {
               </button>
 
               {isOpen && answerHtml && (
-                <div
-                  className={styles.answer}
-                  data-testid={`faq-answer-${idx}`}
-                  // Answer comes from a trusted admin-only Quill editor.
-                  // We render it as HTML so admins can use bold/italic/lists.
-                  dangerouslySetInnerHTML={{ __html: answerHtml }}
-                />
+                <>
+                  {/* Yellow 1 px divider between question and answer when
+                      the item is expanded. Per Figma — every open FAQ has
+                      this horizontal accent line under the title so the
+                      answer reads as a separate block. Hidden when collapsed. */}
+                  <div
+                    className={styles.openDivider}
+                    aria-hidden="true"
+                  />
+                  <div
+                    className={styles.answer}
+                    data-testid={`faq-answer-${idx}`}
+                    // Answer comes from a trusted admin-only Quill editor.
+                    // We render it as HTML so admins can use bold/italic/lists.
+                    dangerouslySetInnerHTML={{ __html: answerHtml }}
+                  />
+                </>
               )}
 
               <div className={styles.separator} />
