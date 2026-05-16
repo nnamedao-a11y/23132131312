@@ -1,5 +1,46 @@
 # BIBI Cars — Session Plan
 
+
+## 2026-05-16 session (part 3) — Our Services icons cleanup (Registration & Certification + Financing)
+
+### Done
+Replaced two heavily-fragmented composite icons in the "Our Services"
+block (`frame-component25.jsx`) with single consolidated inline SVGs,
+following the same pattern used earlier for the IMPORT icon. The
+previous fragment compositions (5 fragments for Registration, 8 for
+Financing) suffered visible sub-pixel degradation (fuzzy strokes,
+misaligned check-marks, non-circular badge).
+
+**New assets** (`/app/frontend/public/figma/`):
+- `registration-icon.svg` — 66×70 viewBox. Document outline 44×56
+  rx=4, two header lines 28×2, inner check 20×13, certification badge
+  28×28 circle with inner check 14×11. All strokes 2px,
+  `linecap=round`, `linejoin=round`.
+- `financing-icon.svg` — 68×62 viewBox. Top banknote 68×46 rx=6,
+  header divider, central coin circle 16×16, lower strip with top
+  line, 3 vertical 2×8 dashes, bottom line 62×2. All strokes 2px.
+
+**JSX changes** (`figma_home/components/frame-component25.jsx`):
+- Registration & Certification card: 6 `<img>` fragments → 1 `<img
+  className={styles.registrationIcon} src="/figma/registration-icon.svg" />`.
+- Financing card: 8 `<img>` fragments → 1 `<img
+  className={styles.financingIcon} src="/figma/financing-icon.svg" />`.
+
+**CSS additions** (`frame-component25.module.css`):
+- `.registrationIcon { display:block; width:66px; height:70px; }`
+- `.financingIcon { display:block; width:68px; height:62px; }`
+
+### Files touched
+- `frontend/public/figma/registration-icon.svg` (new)
+- `frontend/public/figma/financing-icon.svg` (new)
+- `frontend/src/figma_home/components/frame-component25.jsx`
+- `frontend/src/figma_home/components/frame-component25.module.css`
+
+Verified live: icons render crisp at 1× and retina, stroke uniform 2px
+throughout, badge ring is a perfect circle, both checkmarks render
+cleanly, coin circle is round.
+
+
 Updated: 2026-05-16 (Session: "Hero left-half mirror overlay + Before/After Bold title + animation verification")
 
 ## Status snapshot

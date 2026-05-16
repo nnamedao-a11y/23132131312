@@ -290,52 +290,20 @@ const FrameComponent25 = ({
               <section className={styles.rectangleContainer}>
                 <div className={styles.frameItem} />
                 <div className={styles.frameDiv}>
-                  <div className={styles.vectorContainer}>
-                    <img                       className={styles.vectorIcon}
-                      width={44}
-                      height={56}
-                      sizes="100vw"
-                      alt=""
-                      src="/figma/Vector8.svg"
-                    />
-                    <img                       className={styles.vectorIcon14}
-                      width={28}
-                      height={2}
-                      sizes="100vw"
-                      alt=""
-                      src="/figma/Vector3.svg"
-                    />
-                    <img                       className={styles.vectorIcon15}
-                      width={28}
-                      height={2}
-                      sizes="100vw"
-                      alt=""
-                      src="/figma/Vector3.svg"
-                    />
-                    <img                       className={styles.vectorIcon16}
-                      width={20}
-                      height={13}
-                      sizes="100vw"
-                      alt=""
-                      src="/figma/Vector9.svg"
-                    />
-                  </div>
-                  <div className={styles.vectorParent2}>
-                    <img                       className={styles.vectorIcon17}
-                      width={28}
-                      height={28}
-                      sizes="100vw"
-                      alt=""
-                      src="/figma/Vector2.svg"
-                    />
-                    <img                       className={styles.vectorIcon18}
-                      width={14}
-                      height={11}
-                      sizes="100vw"
-                      alt=""
-                      src="/figma/Vector10.svg"
-                    />
-                  </div>
+                  {/* Single combined Registration & Certification icon —
+                      replaces the previous 6-piece composition. Drawn
+                      natively at 66×70 with stroke-width 2 everywhere
+                      so the document outline stays sharp, both check-
+                      marks render crisply and the certification badge
+                      ring is a perfect circle. */}
+                  <img
+                    className={styles.registrationIcon}
+                    width={66}
+                    height={70}
+                    sizes="100vw"
+                    alt=""
+                    src="/figma/registration-icon.svg"
+                  />
                 </div>
                 <h2 className={styles.registrationAndCertification}>
                   {t.registration}
@@ -349,76 +317,21 @@ const FrameComponent25 = ({
               <section className={styles.frameSection}>
                 <div className={styles.rectangleDiv} />
                 <div className={styles.frameParent2}>
-                  <div className={styles.frameParent3}>
-                    <div className={styles.frameParent4}>
-                      <div className={styles.vectorParent3}>
-                        <img                           className={styles.vectorIcon19}
-                          width={68}
-                          height={46}
-                          sizes="100vw"
-                          alt=""
-                          src="/figma/Vector11.svg"
-                        />
-                        <img                           className={styles.vectorIcon20}
-                          width={68}
-                          height={2}
-                          sizes="100vw"
-                          alt=""
-                          src="/figma/Vector3.svg"
-                        />
-                      </div>
-                      <img                         className={styles.vectorIcon21}
-                        width={16}
-                        height={16}
-                        sizes="100vw"
-                        alt=""
-                        src="/figma/Vector2.svg"
-                      />
-                    </div>
-                    <div className={styles.vectorParent4}>
-                      <img                         className={styles.vectorIcon22}
-                        width={68}
-                        height={2}
-                        sizes="100vw"
-                        alt=""
-                        src="/figma/Vector3.svg"
-                      />
-                      <div className={styles.frameWrapper2}>
-                        <div className={styles.vectorParent5}>
-                          <img                             className={styles.vectorIcon23}
-                            width={2}
-                            height={8}
-                            sizes="100vw"
-                            alt=""
-                            src="/figma/Vector12.svg"
-                          />
-                          <img                             className={styles.vectorIcon24}
-                            width={2}
-                            height={8}
-                            sizes="100vw"
-                            alt=""
-                            src="/figma/Vector12.svg"
-                          />
-                          <img                             className={styles.vectorIcon25}
-                            width={2}
-                            height={8}
-                            sizes="100vw"
-                            alt=""
-                            src="/figma/Vector12.svg"
-                          />
-                        </div>
-                      </div>
-                      <div className={styles.vectorWrapper}>
-                        <img                           className={styles.vectorIcon26}
-                          width={64}
-                          height={2}
-                          sizes="100vw"
-                          alt=""
-                          src="/figma/Vector3.svg"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                  {/* Single combined Financing icon — replaces the
+                      previous 8-piece composition (banknote outline
+                      + 4 stripe lines + coin circle + 3 dashes).
+                      Natively drawn at 68×62 with stroke-width 2 so
+                      the coin circle stays round, the divider lines
+                      are crisp, and the three vertical dashes are
+                      properly aligned. */}
+                  <img
+                    className={styles.financingIcon}
+                    width={68}
+                    height={62}
+                    sizes="100vw"
+                    alt=""
+                    src="/figma/financing-icon.svg"
+                  />
                   <div className={styles.financingWrapper}>
                     <h3 className={styles.financing}>{t.financing}</h3>
                   </div>

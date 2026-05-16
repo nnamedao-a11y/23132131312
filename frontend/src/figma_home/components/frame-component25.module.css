@@ -115,6 +115,27 @@
   width: 70px;
   height: 54px;
 }
+
+/* Single combined Registration & Certification icon — replaces the
+   previous 6-piece composition. Rendered natively at 66×70 with
+   stroke-width 2 everywhere so the document outline, both check-marks
+   and the certification badge ring all stay sharp at any zoom level. */
+.registrationIcon {
+  display: block;
+  width: 66px;
+  height: 70px;
+  flex-shrink: 0;
+}
+
+/* Single combined Financing icon — replaces the previous 8-piece
+   composition. Rendered natively at 68×62 with stroke-width 2 so the
+   coin circle, banknote outline and dashes remain crisp. */
+.financingIcon {
+  display: block;
+  width: 68px;
+  height: 62px;
+  flex-shrink: 0;
+}
 .vectorParent {
   height: var(--height-52);
   flex: 1;
