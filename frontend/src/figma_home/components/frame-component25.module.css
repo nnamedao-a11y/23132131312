@@ -136,6 +136,18 @@
   height: 62px;
   flex-shrink: 0;
 }
+
+/* Single combined Parts Sourcing & Delivery icon — replaces the previous
+   5-piece composition (sun rays + circle + box outline + horizontal
+   divider + vertical seam). Rendered natively at 56×46 with stroke-width
+   2 everywhere, so the internal box divider lines (which previously
+   scaled to ~0 px stroke) are now crisp 2 px lines. */
+.partsSourcingIcon {
+  display: block;
+  width: 56px;
+  height: 46px;
+  flex-shrink: 0;
+}
 .vectorParent {
   height: var(--height-52);
   flex: 1;

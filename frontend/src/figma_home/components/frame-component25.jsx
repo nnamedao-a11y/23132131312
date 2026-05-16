@@ -318,56 +318,20 @@ const FrameComponent25 = ({
             </div>
 
             <div className={styles.frameParent5}>
-              {/* Row 2, card 1 — PARTS SOURCING & DELIVERY (original fragments) */}
+              {/* Row 2, card 1 — PARTS SOURCING & DELIVERY (consolidated single SVG,
+                  same pattern as Import/Registration/Financing — fixes the
+                  internal divider lines which previously scaled to ~0px stroke). */}
               <section className={`${styles.frameWrapper3} ${styles.serviceCard}`}>
                 <div className={styles.serviceCardBg} />
-                <div className={styles.serviceCardIcon} style={{ width: 60, height: 50 }}>
-                  <div className={styles.frameParent6}>
-                    <div className={styles.vectorParent6}>
-                      <img
-                        className={styles.vectorIcon27}
-                        width={24}
-                        height={24}
-                        sizes="100vw"
-                        alt=""
-                        src="/figma/Vector2.svg"
-                      />
-                      <img
-                        className={styles.vectorIcon17}
-                        width={36}
-                        height={36}
-                        sizes="100vw"
-                        alt=""
-                        src="/figma/Vector13.svg"
-                      />
-                    </div>
-                    <div className={styles.vectorParent7}>
-                      <img
-                        className={styles.vectorIcon29}
-                        width={24}
-                        height={22}
-                        sizes="100vw"
-                        alt=""
-                        src="/figma/Vector14.svg"
-                      />
-                      <img
-                        className={styles.vectorIcon30}
-                        width={24}
-                        height={2}
-                        sizes="100vw"
-                        alt=""
-                        src="/figma/Vector3.svg"
-                      />
-                      <img
-                        className={styles.vectorIcon31}
-                        width={2}
-                        height={8}
-                        sizes="100vw"
-                        alt=""
-                        src="/figma/Vector12.svg"
-                      />
-                    </div>
-                  </div>
+                <div className={styles.serviceCardIcon} style={{ width: 56, height: 46 }}>
+                  <img
+                    className={styles.partsSourcingIcon}
+                    width={56}
+                    height={46}
+                    sizes="100vw"
+                    alt=""
+                    src="/figma/parts-sourcing-icon.svg"
+                  />
                 </div>
                 <h2 className={`${styles.serviceCardTitle} ${styles.serviceCardTitleTwoLine}`}>
                   {t.partsSourcing}
